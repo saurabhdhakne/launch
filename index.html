@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      /* background: linear-gradient(0deg, #c4c6c9 0%, #6f8ed8 100%); */
+    }
+
+    #zero,
+    #one,
+    #two,
+    #three,
+    #four,
+    #five,
+    #six {
+      transition: 1s all;
+      position: fixed;
+      height: 0vh;
+      width: 100%;
+      top: 0vh;
+      margin-top: 0;
+    }
+
+    #zero {
+      background: linear-gradient(0deg, #c4c6c9 0%, #6f8ed8 100%);
+      height: 100vh;
+    }
+
+    #one {
+      background: linear-gradient(0deg, #6f8ed8 0%, #5c7cc7 100%);
+    }
+
+    #two {
+      background: linear-gradient(0deg, #5c7cc7 0%, #3c5eac 100%);
+    }
+
+    #three {
+      background: linear-gradient(0deg, #3c5eac 0%, #112b66 100%);
+    }
+
+    #four {
+      background: linear-gradient(0deg, #112b66 0%, #000716 100%);
+    }
+
+
+
+    input {
+      border: 0px;
+      border-radius: 40px;
+      padding: 20px 50px;
+      position: fixed;
+      bottom: 10vh;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #E31837;
+      color: #ffffff;
+      font-size: 2em;
+      cursor: pointer;
+      transition: .8s all;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, .6);
+    }
+
+    input:hover {
+      outline: 5px solid #E31837;
+      background: #ffffff;
+      color: #E31837;
+      outline-offset: -5px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="zero">
+
+  </div>
+  <div id="one">
+
+  </div>
+  <div id="two">
+
+  </div>
+  <div id="three">
+
+  </div>
+  <div id="four">
+
+  </div>
+
+  <div class="rocket">
+    <div class="rocket-body">
+      <div class="body"></div>
+      <div class="fin fin-left"></div>
+      <div class="fin fin-right"></div>
+      <div class="window"></div>
+    </div>
+    <div class="exhaust-flame"></div>
+    <ul class="exhaust-fumes">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <input type="button" value="Launch" id="btn" onclick="launch()">
+  </div>
+
+  <audio autoplay loop  id="playAudio">
+    <source src="launch.mp3">
+</audio> 
+  
+  <script>
+    function launch() {
+      document.getElementById('btn').style = "bottom:-50vh; transition:4s all";
+
+      document.getElementById('zero').style = "top:100vh"; 
+      // document.getElementById('one').style = "height:100vh";
+
+
+        
+      setTimeout(() => { document.getElementById('one').style = "height:100vh"; }, 0000);
+      setTimeout(() => { document.getElementById('one').style = "top:100vh"; }, 1000);
+
+      setTimeout(() => { document.getElementById('two').style = "height:100vh"; },1000);
+      setTimeout(() => { document.getElementById('two').style = "top:100vh"; }, 2000);
+
+      setTimeout(() => { document.getElementById('three').style = "height:100vh"; }, 2000);
+      setTimeout(() => { document.getElementById('three').style = "top:100vh"; }, 3000);
+
+      setTimeout(() => { document.getElementById('four').style = "height:100vh"; }, 3000);
+
+      setTimeout(() => { window.location = 'https://muaarchanamantri.com' }, 3200);
+      
+      
+      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        
+        if (!isChrome){
+            $('#iframeAudio').remove()
+        }
+        else {
+            $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+        }
+
+    }
+
+    </script>
+
+
+</body>
+
+</html>
